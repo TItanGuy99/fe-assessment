@@ -19,14 +19,14 @@ All the main requirements have been accomplished:
 
 To install and run the project, follow these steps:
 
-On the root execute this command to install the 'Front-End':
+On the root of the project execute this command to install the 'Front-End':
 ```
-json-server --watch db.json
+npm i
 ```
 
 Execute this command to run the Back-End over the port 3000:
 ```
-json-server --watch db.json
+npm run api
 ```
 
 On the root execute this command to run the 'Front-End' over the 3001 port:
