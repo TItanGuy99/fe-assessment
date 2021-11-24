@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import URL_BASE from "../../../Services/URL_BASE";
 
 export default function ListNumbers() {
   const { companyId } = useParams();
@@ -19,10 +20,10 @@ export default function ListNumbers() {
         </Link>
       </Box>
       <Tables
-        url="http://localhost:3000/phone_numbers"
+        url={URL_BASE + "phone_numbers"}
         path="/number/"
-        idSelector = {companyId}
-        fieldSelector = "company_id"
+        idSelector={companyId}
+        fieldSelector="company_id"
         columns={["Number", "Type"]}
         pKey={["id", "type"]}
       ></Tables>

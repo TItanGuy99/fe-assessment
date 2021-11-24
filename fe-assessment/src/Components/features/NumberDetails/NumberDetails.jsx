@@ -7,6 +7,7 @@ import CardContent from "@mui/material/CardContent";
 import { useParams, useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import api from "../../../Services/Api";
+import URL_BASE from "../../../Services/URL_BASE";
 
 export default function ListNumbers() {
   const { numberId } = useParams();
@@ -17,7 +18,7 @@ export default function ListNumbers() {
 
   /* When the component is mounted, get Number details from API */
   useEffect(() => {
-    api.get("http://localhost:3000/phone_numbers/" + numberId).then(
+    api.get(URL_BASE + "phone_numbers/" + numberId).then(
       (response) => {
         setInfo(response.data);
       },
