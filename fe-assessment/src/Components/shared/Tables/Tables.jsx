@@ -1,3 +1,4 @@
+/* Component to show the data in the table */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../../Services/Api";
@@ -22,15 +23,29 @@ export default function Tables({
   const [rows, setRows] = useState([]);
   let hasFilter = false;
 
+  /* 
+    Check if props idSelector and fieldSelector have been passed
+    to the component;
+  */
   if (idSelector !== undefined && fieldSelector !== undefined) {
     hasFilter = true;
   }
 
+  /* 
+    When component is mounted get the data
+  */
   useEffect(() => {
     api.get(url).then(
       (response) => {
+        /* 
+          If the filters does not have been passed on the props,
+          load all the data
+        */        
         if (!hasFilter) {
           setRows(response.data);
+        /* 
+          Or Else filter by the ID
+        */            
         } else {
           let newData = [];
 
@@ -44,6 +59,9 @@ export default function Tables({
           console.log(rows);
         }
       },
+      /* 
+        Error Handling
+      */       
       (error) => {
         console.log(error);
       }
@@ -51,6 +69,10 @@ export default function Tables({
   }, []);
 
   return (
+    /* 
+      Build the DOM if there is data.
+      If not show a message.
+    */    
     <React.Fragment>
       {rows.length > 0 ? (
         <Box sx={{ flexGrow: 1 }} m={4}>

@@ -1,3 +1,4 @@
+/* Component for listing the numbers */
 import React from "react";
 import Tables from "../../shared/Tables/Tables";
 import Button from "@mui/material/Button";
@@ -8,6 +9,7 @@ import { useParams } from "react-router-dom";
 export default function ListNumbers() {
   const { companyId } = useParams();
   return (
+    /* Sending props to the Tables component */
     <React.Fragment>
       <Box m={2} ml={4} display="flex">
         <Link to="/" style={{ textDecoration: "none" }}>

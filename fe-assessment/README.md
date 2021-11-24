@@ -29,7 +29,7 @@ Execute this command to run the Back-End over the port 3000:
 npm run api
 ```
 
-On the root execute this command to run the 'Front-End' over the 3001 port:
+On the root of the project execute this command to run the 'Front-End' over the 3001 port:
 ```
 npm start
 ```

@@ -1,3 +1,4 @@
+/* Component for Number Details. */
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
@@ -14,6 +15,7 @@ export default function ListNumbers() {
   
   console.log(numberId);
 
+  /* When the component is mounted, get Number details from API */
   useEffect(() => {
     api.get("http://localhost:3000/phone_numbers/" + numberId).then(
       (response) => {
