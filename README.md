@@ -8,12 +8,12 @@
 
 All the main requirements have been accomplished:
 
-- [x] in `/` the user should see the company list
-- [x] clicking on a company should navigate to `/company/:companyId`
-- [x] in `/company/:companyId` the user should see a table of numbers that belong to that company
-- [x] clicking on a number should navigate to `/number/:numberId`
-- [x] in `/number/:numberId` the user should see the number details
-- [x] in both `/number/:numberId` and `/companies/:companyId` there should be a `Go Back` button that goes to the previous page
+- [x] in `/` the user should see the company list;
+- [x] clicking on a company should navigate to `/company/:companyId`;
+- [x] in `/company/:companyId` the user should see a table of numbers that belong to that company;
+- [x] clicking on a number should navigate to `/number/:numberId`;
+- [x] in `/number/:numberId` the user should see the number details;
+- [x] in both `/number/:numberId` and `/companies/:companyId` there should be a `Go Back` button that goes to the previous page;
 
 ## 🚀 Installing the Project
 
