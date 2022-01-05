@@ -1,5 +1,5 @@
 /* Component to show the data in the table */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import api from "../../../Services/Api";
 import Table from "@mui/material/Table";
@@ -21,6 +21,7 @@ export default function Tables({
   pKey,
 }) {
   const [rows, setRows] = useState([]);
+  const saveRows = useMemo(() => rows, [rows]);
   let hasFilter = false;
 
   /* 
@@ -74,7 +75,7 @@ export default function Tables({
       If not show a message.
     */    
     <React.Fragment>
-      {rows.length > 0 ? (
+      {saveRows.length > 0 ? (
         <Box sx={{ flexGrow: 1 }} m={4}>
           <TableContainer component={Paper}>
             <Table
@@ -90,7 +91,7 @@ export default function Tables({
                 </TableRow>
               </TableHead>
               <TableBody>
-                {rows.map((row, index) => (
+                {saveRows.map((row, index) => (
                   <TableRow key={index}>
                     <TableCell component="th" scope="row">
                       <Link
